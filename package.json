@@ -1,0 +1,23 @@
+{
+  "name": "form-value",
+  "version": "1.0.0",
+  "description": "Gets the form item value and assigns a value to the form item",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Laotang1234/form-value"
+  },
+  "keywords": [
+    "form",
+    "value",
+    "getvalue",
+    "assign",
+    "serialize",
+    "serializer"
+  ],
+  "author": "laotang",
+  "license": "ISC"
+}
