@@ -115,7 +115,7 @@ function val(...argus) {
     for (let key in data) {
       let ele = Array.from(form.querySelectorAll(`[name=${key}]`)),
         type
-      type = ele[0].type
+      type = ele[0]?.type
       if (ele.length === 0 || type === 'file') continue
       if (ele.length === 1) {
         if (type === 'checkbox' || type === 'radio') {
