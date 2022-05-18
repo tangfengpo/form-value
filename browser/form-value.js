@@ -16,7 +16,7 @@ function val(...argus) {
   if (argus.length >= 2) {
     if (
       Object.prototype.toString.call(argus[1]) === '[object Object]' ||
-      Object.prototype.toString.call(argus[1]) !== '[object DOMStringMap]'
+      Object.prototype.toString.call(argus[1]) === '[object DOMStringMap]'
     ) {
       data = argus[1]
     } else if (
