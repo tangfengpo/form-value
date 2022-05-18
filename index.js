@@ -14,7 +14,10 @@ function val(...argus) {
   }
 
   if (argus.length >= 2) {
-    if (Object.prototype.toString.call(argus[1]) === '[object Object]') {
+    if (
+      Object.prototype.toString.call(argus[1]) === '[object Object]' ||
+      Object.prototype.toString.call(argus[1]) === '[object DOMStringMap]'
+    ) {
       data = argus[1]
     } else if (
       typeof argus[1] === 'string' &&
@@ -27,7 +30,10 @@ function val(...argus) {
   }
 
   if (argus.length >= 3) {
-    if (Object.prototype.toString.call(argus[1]) !== '[object Object]') {
+    if (
+      Object.prototype.toString.call(argus[1]) !== '[object Object]' ||
+      Object.prototype.toString.call(argus[1]) !== '[object DOMStringMap]'
+    ) {
       throw new Error('if your arguments is 3, param 2 must be an object')
     }
     if (typeof argus[2] !== 'string' || !['json', 'querystring', 'formdata'].includes(argus[2])) {
