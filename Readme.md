@@ -2,6 +2,12 @@
 
 [简体中文](./Readme-cn.md)
 
+### Introduction
+
+Does not rely on any libraries or frameworks, Use only the native DOM.
+
+`val()` function is provided，you can use `val(form)` gets the form values and use `val(form, data)` assign a value to the form item.
+
 ### Install
 
 ```
@@ -27,7 +33,7 @@ returns
 {
   key: value,
   key: value,
-  key: [value1, value2],
+  key: [value1, value2], // if form item type is checkbox
   ...
 }
 */
@@ -48,6 +54,8 @@ returns the FormData Object
 ### Assign
 
 You need to pass in a literal object, and the key of the object must be equal to the name attribute of the form item.
+
+supported DOMStringMap (HTMLElement.dataset) type since 1.0.4
 
 ```js
 let data = {

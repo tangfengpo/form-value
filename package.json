@@ -1,6 +1,6 @@
 {
   "name": "form-value",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Gets the form item value and assigns a value to the form item",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,11 @@
     "getvalue",
     "assign",
     "serialize",
-    "serializer"
+    "serializer",
+    "数据",
+    "回填",
+    "回显",
+    "数据回填"
   ],
   "author": "laotang",
   "license": "ISC"

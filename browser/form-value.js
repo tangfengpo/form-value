@@ -28,20 +28,6 @@ function val(...argus) {
       throw new Error('param 2 must be an object or a string of json,querystring,formdata')
     }
   }
-
-  if (argus.length >= 3) {
-    if (
-      Object.prototype.toString.call(argus[1]) !== '[object Object]' ||
-      Object.prototype.toString.call(argus[1]) !== '[object DOMStringMap]'
-    ) {
-      throw new Error('if your arguments is 3, param 2 must be an object')
-    }
-    if (typeof argus[2] !== 'string' || !['json', 'querystring', 'formdata'].includes(argus[2])) {
-      throw new Error('param 3 must be a string of json,querystring,formdata')
-    }
-    data = argus[1]
-    type = argus[2]
-  }
   //#endregion
   // console.log(form, data, type)
   if (data === null) {
