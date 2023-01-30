@@ -1,9 +1,10 @@
-function val(...argus) {
+function val (...argus) {
   let form,
     data = null,
     type = 'json'
   //#region
-  if (argus.length === 0) throw new Error('The function needs at least 1 argument, but is given 0')
+  if (argus.length === 0)
+    throw new Error('The function needs at least 1 argument, but is given 0')
 
   if (argus.length >= 1) {
     if (argus[0] instanceof HTMLFormElement && argus[0].nodeName === 'FORM') {
@@ -25,7 +26,9 @@ function val(...argus) {
     ) {
       type = argus[1]
     } else {
-      throw new Error('param 2 must be an object or a string of json,querystring,formdata')
+      throw new Error(
+        'param 2 must be an object or a string of json,querystring,formdata'
+      )
     }
   }
   //#endregion
@@ -105,9 +108,8 @@ function val(...argus) {
   } else {
     // set value
     for (let key in data) {
-      let ele = Array.from(form.querySelectorAll(`[name=${key}]`)),
-        type
-      type = ele[0]?.type
+      let ele = Array.from(form.querySelectorAll(`[name=${key}]`))
+      let type = ele[0].type || 'text'
       if (ele.length === 0 || type === 'file') continue
       if (ele.length === 1) {
         if (type === 'checkbox' || type === 'radio') {
@@ -122,7 +124,10 @@ function val(...argus) {
           options.forEach(item => {
             if (data[key] instanceof Array && data[key].includes(item.value)) {
               item.selected = true
-            } else if (typeof data[key] === 'string' && item.value == data[key]) {
+            } else if (
+              typeof data[key] === 'string' &&
+              item.value == data[key]
+            ) {
               item.selected = true
             }
           })
@@ -138,7 +143,10 @@ function val(...argus) {
           ele.forEach(item => {
             if (data[key] instanceof Array && data[key].includes(item.value)) {
               item.checked = true
-            } else if (typeof data[key] === 'string' && data[key] == item.value) {
+            } else if (
+              typeof data[key] === 'string' &&
+              data[key] == item.value
+            ) {
               item.checked = true
             }
           })

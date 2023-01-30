@@ -1,6 +1,6 @@
 {
   "name": "form-value",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Gets the form item value and assigns a value to the form item",
   "main": "index.js",
   "scripts": {
